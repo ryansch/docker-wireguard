@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd "$(dirname $(readlink -f "$0"))"
+cd "$(dirname "$0")"
 docker-compose run --rm wireguard dkms-add
