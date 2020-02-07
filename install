@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~ryansch/wireguard
+cd "$(dirname $(readlink -f "$0"))"
 
 set +e
 sudo which dkms > /dev/null
