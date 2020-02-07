@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd ~ryansch/wireguard
+docker-compose run --rm wireguard dkms-add

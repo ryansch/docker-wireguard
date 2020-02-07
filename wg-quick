@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"
+docker-compose run --rm -v $(pwd)/wg0.conf:/etc/wireguard/wg0.conf -w /etc/wireguard wireguard wg-quick "$@"

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd ~ryansch/wireguard
+
+set +e
+sudo which dkms > /dev/null
+DKMS_FOUND=$?
+set -e
+
+if [ $DKMS_FOUND -eq 1 ]; then
+  docker-compose run --rm wireguard install
+else
+  docker-compose run --rm wireguard dkms-add
+  sudo dkms install wireguard/$(docker-compose run --rm wireguard version)
+  sudo modprobe wireguard
+fi
