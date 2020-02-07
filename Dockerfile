@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       ca-certificates \
       dkms \
       tini \
+      iptables \
   && rm -rf /var/lib/apt/lists/*
 
 # https://git.zx2c4.com/wireguard-linux-compat/refs/
